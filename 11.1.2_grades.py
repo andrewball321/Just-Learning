@@ -8,10 +8,10 @@ true = 1
 false = 0
 
 def print_menu():
-    print "1. Add student"
-    print "2. Remove student"
+    print "1. Add a student"
+    print "2. Remove a student"
     print "3. Print Grades"
-    print "4. Record grade"
+    print "4. Record Grade"
     print "5. Save Students' Grades"
     print "6. Load Students' Grades"
     print "7. Print Menu"    
