@@ -37,20 +37,12 @@ def save_dictionarys(ed,filename):
         out_file.write(x+";"+ed[x]+"\n")
     out_file.close
 
-def capitalize(firstletter):
-    location = ord(firstletter) - ord('a')
-    new_ascii = location + ord('A')
-    capletter = chr(new_ascii) 
-    return capletter
-
 choice = "h"
 while choice != "q":
     if choice == "a":
         print "Lookup English Word"
         english = raw_input("English: ")
-        e1 = english[0]
-        if 'a' <= e1 <= 'z':
-            english = capitalize(e1) + english[1:]
+        english = english.capitalize()
         if edictionary.has_key(english):
             print "The Spanish word is",edictionary[english]
         else:
@@ -59,9 +51,7 @@ while choice != "q":
     elif choice == "b":
         print "Lookup Spanish Word"
         spanish = raw_input("Spanish: ")
-        s1 = spanish[0]
-        if 'a' <= s1 <= 'z':
-            spanish = capitalize(s1) + spanish[1:]
+        spanish = spanish.capitalize()
         if sdictionary.has_key(spanish):
             print "The English word is",sdictionary[spanish]
         else:
@@ -71,12 +61,8 @@ while choice != "q":
         #Enter new words
         english = raw_input("What is your word in English? ")
         spanish = raw_input("What is your word in Spanish? ")
-        e1 = english[0]
-        s1 = spanish[0]
-        if 'a' <= e1 <= 'z':
-            english = capitalize(e1) + english[1:]
-        if 'a' <= s1 <= 'z':
-            spanish = capitalize(s1) + spanish[1:]
+        english = english.capitalize()
+        spanish = spanish.capitalize()
         edictionary[english] = spanish
         sdictionary[spanish] = english
     elif choice == "d":
