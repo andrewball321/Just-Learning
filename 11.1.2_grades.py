@@ -1,9 +1,11 @@
+import string
+
 max_points = [25,25,50,25,100]
 assignments = ['hw ch 1','hw ch 2','quiz    ','hw ch 3','test']
 students = {' #max':max_points}
 
-true = 0
-false = 1
+true = 1
+false = 0
 
 def print_menu():
     print "1. Add student"
@@ -46,8 +48,13 @@ def load_grades(students,filename):
             break
         in_line = in_line[:-1]
         [name,grades_list] = string.split(in_line,";")
-        grades = grades_list
-        print grades+"\n"
+        grades = string.split(grades_list, ",")
+        grades[0] = grades[0][1:]
+        grades[-1] = grades[-1][:-1]
+        a = 0
+        for x in grades:
+            grades[a] = int(grades[a])
+            a = a+1
         students[name] = grades
     in_file.close()
 
