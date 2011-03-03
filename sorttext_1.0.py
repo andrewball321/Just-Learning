@@ -3,6 +3,8 @@ import string
 def load_text(filename):
     in_file = open(filename, "r")
     text = str(in_file.read())
+    for c in string.punctuation:
+        text=text.replace(c,"")
     textlist = sorted(text.split())
     return textlist
 
