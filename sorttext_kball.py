@@ -3,7 +3,6 @@ import string
 def words(text):
     for c in string.punctuation:
         text = text.replace(c,"")
-    print text.split()
     return map(lambda x: x.lower(), text.split())
 
 
