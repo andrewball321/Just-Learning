@@ -12,7 +12,7 @@ def list_text(sortedtext):
     print sortedtext
     textnumb = 1
     for a in range(len(sortedtext)):
-        if index == sortedtext[-1]:
+        if a == len(sortedtext)-1:
             if prev == index:
                 print prev, ": ", textnumb+1
                 return
